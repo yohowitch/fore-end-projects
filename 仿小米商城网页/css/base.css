@@ -1,0 +1,625 @@
+/* 头部开始 */
+
+header {
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+}
+
+#head_left {
+    float: left;
+}
+
+#head_right {
+    float: right;
+}
+
+#head_left li,
+#head_right li {
+    display: inline-block;
+    padding: 0 1px 0 1px;
+    line-height: 40px;
+}
+
+#head_left li a,
+#head_right li a {
+    font-size: 10px;
+    color: #B0B0B0;
+}
+
+#head_left li a:hover,
+#head_right li a:hover {
+    color: #fff;
+}
+
+#shopping_car {
+    display: inline-block;
+    margin-left: 5px;
+    width: 122px;
+    height: 100%;
+    background-color: #424242;
+    text-align: center;
+    line-height: 100%;
+}
+
+#shopping_car::before {
+    font-family: 'icomoon';
+    content: '\e903   ';
+    color: #B0B0B0;
+    font-size: 14px;
+}
+
+#shopping_car:hover {
+    background-color: #fff;
+}
+
+#shopping_car:hover a {
+    color: #FF6700;
+}
+
+#head_right #shopping_car a:hover {
+    color: #FF6700;
+}
+
+#shopping_car #dropdown {
+    width: 314px;
+    height: 98px;
+    border: 1px solid #000;
+    /* box-shadow: 1px 1px 1px #eee; */
+}
+
+
+/* 头部结束 */
+
+
+/* 首导航栏开始 */
+
+.head_nav {
+    position: relative;
+    height: 101px;
+}
+
+.head_nav .logo {
+    position: absolute;
+    top: 22px;
+    width: 56px;
+    height: 56px;
+}
+
+.head_nav #head_nav_content {
+    position: absolute;
+    top: 41px;
+    left: 234px;
+}
+
+.head_nav #head_nav_content li {
+    display: inline-block;
+    margin-right: 18px;
+}
+
+.head_nav #head_nav_content li a {
+    font-size: 16px;
+    color: black;
+}
+
+.head_nav #head_nav_content li a:hover {
+    color: #FF6700;
+}
+
+.head_nav #search_box {
+    position: absolute;
+    top: 27px;
+    left: 931px;
+    width: 299px;
+    height: 46px;
+}
+
+.head_nav #search_box #search_content #_input {
+    float: left;
+    width: 243px;
+    height: 46px;
+    font-size: 16px;
+    text-indent: 1em;
+    border: 1px solid #dad5d5;
+}
+
+
+/* hover效果没写出来 */
+
+#search_box #search_content::after {
+    font-family: 'icomoon';
+    content: '\e986';
+    float: left;
+    width: 52px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    font-size: 18px;
+    color: #696969;
+    border-top: 1px solid #dad5d5;
+    border-right: 1px solid #dad5d5;
+    border-bottom: 1px solid #dad5d5;
+    background-color: #fff;
+}
+
+
+/* 首导航栏结束 */
+
+
+/* 主导航栏开始 */
+
+.nav {
+    position: relative;
+    height: 460px;
+    overflow: hidden;
+}
+
+.nav .nav_left {
+    position: absolute;
+    width: 234px;
+    height: 100%;
+    background-color: rgba(95, 87, 80, 0.5);
+    z-index: 1;
+}
+
+.nav_main #pre,
+.nav_main #next {
+    position: absolute;
+    top: 230px;
+    width: 42px;
+    height: 64px;
+    margin-top: -32px;
+    text-align: center;
+    line-height: 64px;
+    font-size: 33px;
+    color: #C3CED9;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.nav_main #pre:hover {
+    background-color: #797470;
+    cursor: pointer;
+}
+
+.nav_main #next:hover {
+    background-color: #797470;
+    cursor: pointer;
+}
+
+.nav_main #pre {
+    left: 234px;
+}
+
+.nav_main #next {
+    right: 0;
+}
+
+.nav_main #box {
+    position: absolute;
+    left: 0px;
+    list-style: none;
+}
+
+.nav_main #box li {
+    float: left;
+}
+
+.nav_main #box li img {
+    width: 1226px;
+    height: 460px;
+}
+
+.nav #box:hover {
+    cursor: pointer;
+}
+
+.nav_main #box_nav {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+    /* 长度和宽度计算是看了官网的 这么长是因为后续js可能添加新点 */
+    width: 400px;
+    height: 21px;
+    text-align: right;
+    /* z-index: 2; */
+    /* background-color: pink; */
+}
+
+.nav_main #box_nav a {
+    /* float: right; */
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 4px;
+    background-color: #797470;
+    border: 1px solid #948f8b;
+    border-radius: 50%;
+}
+
+.nav_main #box li:hover {
+    background-color: hsla(0, 0%, 100%, .4);
+    border-color: rgba(0, 0, 0, .4);
+}
+
+.nav_left #nav_left_content {
+    margin-top: 20px;
+    height: 420px;
+}
+
+.nav_left #nav_left_content li {
+    height: 42px;
+    line-height: 42px;
+    text-indent: 2em;
+}
+
+.nav_left #nav_left_content li:hover {
+    background-color: #FF6700;
+}
+
+.nav_left #nav_left_content li a {
+    font-size: 14px;
+    color: #fff;
+}
+
+.nav_left #nav_left_content li span {
+    float: right;
+    margin-right: 24px;
+    color: #fff;
+}
+
+
+/* 主导航栏结束 */
+
+
+/* 秒杀块开始 */
+
+.miaosha {
+    width: 100%;
+    height: 196px;
+    padding-top: 16px;
+}
+
+.miaosha .miaosha_box1 {
+    float: left;
+    width: 233px;
+    height: 169px;
+    background-color: #5F5750;
+}
+
+.miaosha .miaosha_box1 a {
+    font-size: 13px;
+    color: #CFCCCA;
+}
+
+.miaosha .miaosha_box1 li {
+    float: left;
+    width: 75px;
+    height: 81px;
+    border: 1px solid #665E57;
+    text-align: center;
+}
+
+.miaosha .miaosha_box1 .miaosha_c::before {
+    display: block;
+    margin-left: 19px;
+    margin-top: 15px;
+    width: 28px;
+    height: 32px;
+    font-family: 'icomoon';
+    content: '\e950';
+    font-size: 25px;
+}
+
+.miaosha .miaosha_box1 .miaosha_c {
+    height: 18px;
+    margin-top: 0;
+}
+
+.miaosha .miaosha_box2 {
+    margin-left: 16px;
+    float: left;
+}
+
+.miaosha .miaosha_box2 img {
+    width: 315px;
+    height: 169px;
+}
+
+
+/* 秒杀块结束 */
+
+
+/* 主模块开始 */
+
+.main {
+    height: 1000px;
+    background-color: #F5F5F5;
+}
+
+.main .main_show1 img {
+    margin-top: 24px;
+    width: 100%;
+    height: 121px;
+}
+
+
+/* 题目 */
+
+.hd {
+    height: 58px;
+    margin-top: 22px;
+    line-height: 58px;
+}
+
+.title_1 {
+    float: left;
+    height: 58px;
+    font-size: 22px;
+    font-weight: 200;
+    color: #333;
+}
+
+.more {
+    float: right;
+    height: 58px;
+    font-size: 16px;
+    line-height: 58px;
+}
+
+.more a {
+    text-decoration: none;
+    color: #424242;
+}
+
+.more::after {
+    font-family: 'icomoon';
+    content: '\ea42';
+    font-size: 16px;
+    vertical-align: bottom;
+}
+
+
+/* 产品 */
+
+.production {
+    height: 614px;
+}
+
+.production .production_left {
+    float: left;
+    width: 234px;
+    height: 100%;
+}
+
+.production_right .pright li {
+    float: left;
+    width: 234px;
+    height: 300px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.production_right .pright li img {
+    width: 160px;
+    height: 160px;
+    margin: 20px 0 0 5px;
+}
+
+.production_right .pright li .p_title {
+    margin-top: 10px;
+}
+
+.production_right .pright li .p_int {
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+.production_right .pright li .p_price {
+    margin-top: 10px;
+}
+
+.production_right .pright li {
+    margin-left: 14px;
+    margin-bottom: 14px;
+}
+
+
+/* 主模块结束 */
+
+
+/* 底部模块开始 */
+
+.footer {
+    height: 335px;
+    background-color: #fff;
+}
+
+.footer_h {
+    height: 80px;
+}
+
+.footer_h .footer_htitle {
+    height: 80px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.footer_h .footer_htitle li {
+    float: left;
+    width: 242px;
+    height: 25px;
+    margin-top: 26px;
+    text-align: center;
+    line-height: 25px;
+    border-right: 1px solid #E0E0E0;
+}
+
+.footer_h .footer_htitle li:last-child {
+    border: 0;
+}
+
+.footer_h .footer_htitle li a {
+    color: #616161;
+}
+
+
+/* 这种需要改类，再该样式 这里只是打样 改样式即将html中c分别改为其他类别 */
+
+.footer_h .footer_htitle li .c::before {
+    font-family: 'icomoon';
+    content: '\e946';
+    font-size: 20px;
+    color: #6F6C6C;
+    vertical-align: bottom;
+}
+
+.footer .footer_f {
+    position: relative;
+    margin-top: 42px;
+}
+
+.footer_f .info {
+    float: left;
+    margin-right: 105px;
+}
+
+.footer .footer_f .info li:first-child {
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.footer_f .info li {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer_f .info li a {
+    color: #8f8d8d;
+}
+
+.footer .help {
+    float: left;
+    padding-left: 17px;
+    text-align: center;
+}
+
+.help .help_tel {
+    font-size: 22px;
+    color: #ff6700;
+}
+
+.help .help_time {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
+.help .rg {
+    width: 119px;
+    height: 30px;
+    margin: 0 auto;
+    border: 1px solid #f25807;
+    background-color: #fff;
+}
+
+.help .rg:hover {
+    background-color: #f25807;
+}
+
+.help .rg:hover button {
+    color: #fff;
+}
+
+.help .rg button {
+    width: 119px;
+    height: 30px;
+    line-height: 30px;
+    color: #f25807;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    /* 去掉默认效果 */
+}
+
+.help .rg button::after {
+    outline: none;
+}
+
+.help .help_att {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.line {
+    position: absolute;
+    left: 973px;
+    width: 1px;
+    height: 95px;
+    background-color: #E0E0E0;
+}
+
+
+/* 底部模块结束 */
+
+
+/* 版权模块开始 */
+
+.copyright {
+    clear: both;
+    height: 266px;
+    background-color: #F5F5F5;
+}
+
+.copyright .cpright {
+    padding-top: 30px;
+}
+
+.copyright .cpright_left {
+    float: left;
+}
+
+.copyright .cpright_right {
+    float: left;
+}
+
+.copyright .cpright_box {
+    width: 971px;
+}
+
+.copyright .cpright_box li {
+    padding: 0 1px 0 1px;
+    color: #8f8d8d;
+    float: left;
+}
+
+.copyright .cpright_box li a {
+    font-size: 12px;
+    color: #757575;
+}
+
+.cpright_right .cpright_box1 {
+    clear: both;
+    font-size: 11px;
+    color: #B7B0C1;
+}
+
+.cpright_img img {
+    width: 85px;
+    height: 28px;
+}
+
+.zhufu {
+    clear: both;
+    width: 100%;
+    height: 19px;
+    padding: 48px 0 0 423px;
+    font-family: "楷体", "楷体_GB2312";
+    font-size: 20px;
+    color: #BABABA;
+}
+
+
+/* 版权模块结束 */

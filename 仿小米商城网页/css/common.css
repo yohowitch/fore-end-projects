@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?ja9xpj');
+    src: url('../fonts/icomoon.eot?ja9xpj#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?ja9xpj') format('truetype'), url('../fonts/icomoon.woff?ja9xpj') format('woff'), url('../fonts/icomoon.svg?ja9xpj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+
+/* 版心 */
+
+.w {
+    width: 1226px;
+    margin: 0 auto;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+}
+
+.red {
+    color: #FF6700;
+}
+
+.grey {
+    color: #B9B9B9;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
