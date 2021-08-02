@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凸出</title>
+
+    <!-- 方便所见，将html css  js写在一个文件啦 -->
+    <style type="text/css">
+        .box {
+            width: 1200px;
+            height: 465px;
+        }
+        
+        .box .box_title,
+        .box_main .bm_show {
+            float: left;
+            width: 162px;
+            height: 410px;
+        }
+        
+        .box_main .bm_show:hover {
+            /* 被hover时的状态 */
+            width: 226px;
+            height: 440px;
+            cursor: pointer;
+        }
+        
+        .grey {
+            background-color: grey;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .pink {
+            background-color: pink;
+        }
+        
+        .purple {
+            background-color: purple;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box">
+        <!-- 主题部分 -->
+        <div class="box_title grey">
+
+        </div>
+        <!-- 主体部分 -->
+        <div class="box_main">
+            <div class="bm_show red">
+
+
+            </div>
+            <div class="bm_show blue"></div>
+            <div class="bm_show green"></div>
+            <div class="bm_show yellow"></div>
+            <div class="bm_show pink"></div>
+            <div class="bm_show purple"></div>
+        </div>
+    </div>
+</body>
+
+</html>
