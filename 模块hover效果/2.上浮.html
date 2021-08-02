@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上浮</title>
+
+    <!-- 不占位置，使用定位 -->
+    <style type="text/css">
+        .box {
+            position: relative;
+            width: 1200px;
+            height: 465px;
+            margin: 100px auto;
+        }
+        
+        .bm_show {
+            position: absolute;
+            width: 182px;
+            height: 258px;
+        }
+        
+        .bm_show:hover {
+            /* 被hover时的状态 */
+            top: -20px;
+            width: 223px;
+            height: 338px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        /* 这样写太冗杂了 */
+        
+        .red {
+            left: 0;
+            background-color: red;
+        }
+        
+        .red:hover {
+            left: -20px;
+        }
+        
+        .blue {
+            left: 200px;
+            background-color: blue;
+        }
+        
+        .blue:hover {
+            left: 180px;
+        }
+        
+        .yellow {
+            left: 400px;
+            background-color: yellow;
+        }
+        
+        .yellow:hover {
+            left: 380px;
+        }
+        
+        .green {
+            left: 600px;
+            background-color: green;
+        }
+        
+        .green:hover {
+            left: 580px;
+        }
+        
+        .pink {
+            left: 800px;
+            background-color: pink;
+        }
+        
+        .pink:hover {
+            left: 780px;
+        }
+        
+        .purple {
+            left: 1000px;
+            background-color: purple;
+        }
+        
+        .purple:hover {
+            left: 980px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <!-- 主体部分 -->
+
+        <div class="bm_show red"></div>
+        <div class="bm_show blue"></div>
+        <div class="bm_show yellow"></div>
+        <div class="bm_show green"></div>
+        <div class="bm_show pink"></div>
+        <div class="bm_show purple"></div>
+    </div>
+
+</body>
+<!-- 只能解决一部分问题 -->
+<!-- <script type="text/javascript">
+    window.onload = function() {
+        var bm_show = document.getElementsByClassName("bm_show");
+        var new_left;
+
+        function $(classname, index) {
+            return document.getElementsByClassName(classname)[index];
+        }
+
+        for (var i = 0; i < bm_show.length; i++) {
+            // 给left赋值
+            bm_show[i].style.left = i * 200 + "px";
+        }
+
+
+
+
+    }; -->
+</script>
+
+</html>

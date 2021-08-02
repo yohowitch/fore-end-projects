@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手风琴</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            display: block;
+        }
+        
+        .king {
+            width: 852px;
+            height: 69px;
+            margin: 100px auto;
+        }
+        
+        .king ul li {
+            position: relative;
+            list-style: none;
+            float: left;
+            width: 69px;
+            height: 69px;
+        }
+        
+        .king .small {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 69px;
+            height: 69px;
+        }
+        
+        .king .big {
+            width: 224px;
+            display: none;
+        }
+        
+        .king .current {
+            width: 224px;
+        }
+        
+        .king .current .big {
+            display: block;
+        }
+        
+        .king .current .small {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="king">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img src="images/手风琴/lianpo1.jpg" alt="" class="small">
+                    <img src="images/手风琴/lianpo.png" alt="" class="big">
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <img src="images/手风琴/luban1.jpg" alt="" class="small">
+                    <img src="images/手风琴/luban.png" alt="" class="big">
+
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/手风琴/zhong1.jpg" alt="" class="small">
+                    <img src="images/手风琴/zhong.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/手风琴/sun1.jpg" alt="" class="small">
+                    <img src="images/手风琴/sun.png" alt="" class="big">
+                </a>
+
+            </li>
+            <li class="">
+                <a href="#">
+                    <img src="images/手风琴/xie1jpg.jpg" alt="" class="small">
+                    <img src="images/手风琴/xie.png" alt="" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/手风琴/si1.jpg" alt="" class="small">
+                    <img src="images/手风琴/si.png" alt="" class="big">
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <img src="images/手风琴/yao1.jpg" alt="" class="small">
+                    <img src="images/手风琴/yao.png" alt="" class="big">
+                </a>
+
+
+            </li>
+        </ul>
+    </div>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function() {
+            $('.king li').mouseenter(function() {
+
+                $(this).stop().animate({ // 当下的图片变长
+                    width: 224
+                        // 小图片淡出，大图片淡入
+                }).find('.small').stop().fadeOut().siblings('.big').stop().fadeIn();
+                $(this).siblings('li').stop().animate({ //其他图片
+                    width: 69
+                        // 小图片淡入，大图片淡出
+                }).find('.big').stop().fadeOut().siblings('.small').stop().fadeIn();
+            })
+        });
+    </script>
+</body>
+
+</html>
