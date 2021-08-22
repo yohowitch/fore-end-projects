@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            background-color: #676767; /* Green */
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #cart,#other{
+            width: 700px;
+            margin: 20px auto;
+        }
+
+        table
+        {
+            border-collapse: collapse;
+            text-align: center;
+            table-layout: fixed;
+            width:100%;
+        }
+        table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 30px;
+        }
+        table thead th
+        {
+            background-color: #CCE8EB;
+            width: 100px;
+        }
+        table tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+        table tr:nth-child(even)
+        {
+            background: #F5FAFA;
+        }
+        #MyFooter{
+            position: relative;
+            width: 100%;
+            top: 5px;
+        }
+        #MyFooter div button{
+            position: absolute;
+            top: 0;
+            right:0;
+        }
+
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      <div id="cart" v-if="isShow">
+    <table >
+        <tr>
+            <th><input type="checkbox" @click="getAll" v-model:checked="alldone"> </th>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>购买数量</th>
+            <th>操作</th>
+        </tr>
+        <tr v-for="(item,index) in list" :key="item.name" v-if="!item.doDel">
+           <td><input type="checkbox" @click="item.isdone=!item.isdone" v-model:checked="item.isdone"></td>
+            <td>{{item.name}}</td>
+            <td>{{toNum(item.price)}}</td>
+            <td>
+                <button @click="Decrement(item,index)">-</button>
+                {{item.count}}
+                <button @click="Increment(item)">+</button>
+            </td>
+            <td>
+                <button @click="deleteItem(index)">删除</button>
+            </td>
+        </tr>
+
+    </table>
+          <div id="MyFooter">
+              <div>共计￥{{toNum(totalPrice)}}</div>
+              <div><button @click="pDelete">批量删除</button></div>
+          </div>
+      </div>
+
+      <div v-else id="other">
+          <h2>购物车空空如也~</h2>
+      </div>
+  </div>
+    <script type="text/javascript">
+        const app = new Vue({
+            el:'#app',
+            data:{
+                list:[
+                    {
+                         name:'鲁路修',
+                        price:12.00,
+                        count:1,
+                        isdone:false,
+                        doDel:false
+                     },
+                    {
+                        name:'深海',
+                        price:11.00,
+                        count:1,
+                        isdone:false,
+                        doDel:false
+                    },
+                    {
+                        name:'西瓜书',
+                        price:13.00,
+                        count:1,
+                        isdone: false,
+                        doDel:false
+                    },
+                    {
+                        name:'99',
+                        price:15.00,
+                        count:1,
+                        isdone:false,
+                        doDel:false
+                    },
+
+                ],
+            alldone:false,
+                isShow:true
+            },
+            computed:{
+                totalPrice(){
+                    account=0
+                    for(item of this.list){
+                        // alert(item.price)
+                        if(item.isdone) {
+                            account += item.price * item.count
+                        }
+                    }
+                    return account
+
+                }
+            },
+            methods:{
+                Decrement(item,index){
+                    if(item.count == 0){
+
+                        this.deleteItem(index)
+                        return
+                    }
+                    item.count--
+
+                },
+                Increment(item){
+                    item.count++
+                },
+                getAll(){
+                    this.alldone = !this.alldone
+                    if(this.alldone){
+                        for(item of this.list){
+                            item.isdone = true
+                        }
+                    }
+                    else {
+                        for(item of this.list){
+                            item.isdone = false
+                        }
+                    }
+                },
+            deleteItem(index){
+                this.list.splice(index,1)
+            },
+               pDelete(){
+                       j=0
+                        for(let i=0;i<this.list.length;i++){
+                            if(this.list[i].isdone){ //被选中
+                                this.list[i].doDel = true //表示要被删除了
+                                this.list[i].isdone =false  // 记得去掉选中
+                                j++
+                            }
+                        }
+                   if(j == this.list.length){
+                       // 表示没有东西在购物车里了~
+                       this.isShow = false
+                   }
+
+               },
+          toNum(val){
+                    return val.toFixed(2) //保留两位小数
+          }
+
+            },
+       watch:{
+                list:{
+                    handler(val,oldVal){
+                        // console.log(val)
+                        if(val.length == 0 ){
+                            // 表示没有东西在购物车里了~
+                            this.isShow = false
+                        }
+                        j = 0
+                        for(i of val){
+                            if(i.isdone){
+                                j++
+                            }
+                        }
+                        if(j == val.length){
+                            this.alldone=true
+                        }else{
+                            this.alldone=false
+                        }
+                    },
+                    deep:true  //深度监听 可以监听到对象、数组的变化
+                }
+
+       }
+
+        })
+
+    </script>
+</body>
+</html>
